@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aslı & Apo Wrapped 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Story Progress Bars -->
+    <div id="progress-container">
+        <!-- Bars will be injected by JS -->
+    </div>
+
+    <!-- Music Player (Hidden initially) -->
+    <div id="music-player">
+        <div class="album-art">
+            <video src="photos/Lovers Rock.mp4" id="player-img" autoplay muted loop playsinline></video>
+        </div>
+        <div class="track-info">
+            <div class="track-name">Lovers Rock</div>
+            <div class="artist-name">TV Girl (Our Song)</div>
+        </div>
+        <div class="play-controls" id="play-btn">▶</div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="music/Lovers Rock.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- SECTION 1: INTRO -->
+    <section id="intro">
+        <img src="" alt="Biz" class="background-photo blur">
+        <div class="content reveal">
+            <h1 class="title-huge">Aslı x Apo</h1>
+            <p class="subtitle">BİZİM HİKAYEMİZ 2025</p>
+            <button class="btn-cta" id="start-btn">Hikayeye Başla</button>
+            <!-- Scroll indicator removed -->
+        </div>
+    </section>
+
+    <!-- SECTION: NOSTALGIA (Childhood) -->
+    <section id="nostalgia" style="background: radial-gradient(circle, #222, #000);">
+        <div class="content reveal">
+            <h2>her şeyin başladığı yer...</h2>
+            <div class="polaroid-container">
+                <div class="polaroid left">
+                    <img src="photos/aslıbebek.jpeg" alt="Aslı Bebek">
+                    <p class="caption">Aslı</p>
+                </div>
+                <div class="polaroid right">
+                    <img src="photos/apobebek.jpeg" alt="Apo Bebek">
+                    <p class="caption">Apo</p>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; font-style: italic;">"kim bilirdi yollarımızın kesişeceğini?" ✨</p>
+        </div>
+    </section>
+
+    <!-- SECTION: PROBABILITY (Destiny) -->
+    <section id="probability" style="background: linear-gradient(to bottom, #000000, #1a1a1a);">
+        <div class="content reveal">
+            <h2 style="font-size: 2rem; opacity: 0.8;">dünyada 8 Milyar İnsan Var...</h2>
+            <p style="margin: 2rem 0; font-size: 1.2rem;">yollarımızın kesişme ihtimali:</p>
+            <h1 class="probability-rate"
+                style="font-size: 4rem; color: #1DB954; text-shadow: 0 0 20px rgba(29, 185, 84, 0.4);">%0.0000042</h1>
+            <p style="margin-top: 2rem; font-family: 'Great Vibes', cursive; font-size: 2rem;">"ama biz birbirimizi
+                bulduk." ❤️</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: TIME SPENT -->
+    <section id="stats-time">
+        <img src="" class="background-photo">
+        <div class="content reveal">
+            <h2>günde ortalama konuşma süremiz</h2>
+            <div class="stat-card">
+                <div class="stat-number">6-8 Saat</div>
+                <p>neredeyse tüm gün... ⏳</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PEAK HOURS -->
+    <section id="stats-peak">
+        <div class="content reveal">
+            <h2>konuşma Saatlerimiz</h2>
+            <p>gece daha iyiyiz sanki?</p>
+            <div class="bar-chart">
+                <div class="bar" style="height: 40px; background: #535353;"></div>
+                <div class="bar" style="height: 60px; background: #535353;"></div>
+                <div class="bar" style="height: 120px; background: #535353;"></div>
+                <div class="bar active-bar" style="height: 230px;"></div> <!-- Peak -->
+                <div class="bar" style="height: 150px; background: #535353;"></div>
+            </div>
+            <p style="margin-top: 15px; font-weight: bold;">prime Time: 21:00 - 02:00 🌙</p>
+        </div>
+    </section>
+
+    <!-- SECTION 4: EMOJI WRAPPED -->
+    <section id="emojis">
+        <div class="content reveal">
+            <h2>en sık kullanılan emojiler</h2>
+            <div class="emoji-cloud">
+                <span class="emoji-item">🥰</span>
+                <span class="emoji-item">🥺</span>
+                <span class="emoji-item">😘</span>
+                <span class="emoji-item">🤪</span>
+                <span class="emoji-item">😭</span>
+            </div>
+            <p>biz ruh hastasıyız...</p>
+        </div>
+    </section>
+
+    <!-- SECTION 5: LAUGH INDEX -->
+    <section id="laugh">
+        <div class="content reveal">
+            <h2>gülüşme Analizi</h2>
+            <div class="stat-card">
+                <h3>random Şeklimiz:</h3>
+                <h1 id="random-laugh">JAKAKWKSMSMSSMSMKSMSMSNSMS</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: TOP COMPLIMENTS -->
+    <section id="compliments">
+        <img src="" class="background-photo">
+        <div class="content reveal">
+            <h2>söylenenlerden...</h2>
+            <div class="stat-card">
+                <p class="highlight-text"><span id="comp-text">"ruh eşim gibisin"</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: HIGHLIGHT MOMENTS -->
+    <section id="highlights">
+        <img src="" alt="Anı" class="background-photo">
+        <div class="content reveal">
+            <h2>unutulmaz Anlar</h2>
+            <div class="stat-card">
+                <p class="highlight-text"><span id="moment-text">"evlenelim mi?" şakaları...</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: RELATIONSHIP ALGORITHM -->
+    <section id="algorithm">
+        <div class="content reveal">
+            <h2>ilişki DNA'mız 🥰</h2>
+            <div class="stat-card">
+                <div class="algo-bars">
+                    <div class="algo-bar-container">
+                        <div class="algo-label"><span>flört</span><span> 45%</span></div>
+                        <div class="algo-progress-bg">
+                            <div class="algo-progress-fill" style="width: 0%" data-width="45%"></div>
+                        </div>
+                    </div>
+                    <div class="algo-bar-container">
+                        <div class="algo-label"><span>mizah (saka)</span><span> 30%</span></div>
+                        <div class="algo-progress-bg">
+                            <div class="algo-progress-fill" style="width: 0%" data-width="30%"></div>
+                        </div>
+                    </div>
+                    <div class="algo-bar-container">
+                        <div class="algo-label"><span>toksiklik (Azıcık)</span><span> 15%</span></div>
+                        <div class="algo-progress-bg">
+                            <div class="algo-progress-fill" style="width: 0%" data-width="15%"></div>
+                        </div>
+                    </div>
+                    <div class="algo-bar-container">
+                        <div class="algo-label"><span>deep Talk</span><span> 10%</span></div>
+                        <div class="algo-progress-bg">
+                            <div class="algo-progress-fill" style="width: 0%" data-width="10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: DRAMA METER -->
+    <section id="drama">
+        <div class="content reveal">
+            <h2>Drama Seviyesi</h2>
+            <div class="meter-container">
+                <div class="meter-fill"></div>
+            </div>
+            <p>daha üstü olamaz</p>
+        </div>
+    </section>
+
+    <!-- SECTION 10: FUTURE PREDICTION -->
+    <section id="future">
+        <img src="" alt="Gelecek" class="background-photo">
+        <div class="content reveal">
+            <h2>gelecek Tahmini</h2>
+            <p class="final-msg">"bu hikaye yarım kalamaz.<br>belki birgün devamı gelir..."</p>
+        </div>
+    </section>
+
+    <!-- FINAL SCREEN -->
+    <section id="final">
+        <div class="content reveal">
+            <h1>o güne kadar...</h1>
+            <p style="margin-bottom: 2rem;">kendine iyi bak</p>
+            <button class="btn-cta" id="heart-btn">hoşçakal sevgilim ❤️</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
