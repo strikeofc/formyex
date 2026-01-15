@@ -232,12 +232,15 @@ if (compText) {
 // Highlight Moments Carousel
 const moments = [
     "klavyeden tek tek küçük harfle yazman",
-    "\"evlenelim mi?\" şakaları...",
-    "trafikte mesajlaşma kaosu ",
+    "getirdiğim hariboyu bende unutman :)",
+    "sana ilk buluşmada çiçek getirmem",
     "birbirimizi ana karakterler gibi görmemiz ✨",
     "diğerlerine boş diyişlerimiz",
     "Gece 3'teki derin konuşmalarımız 🌙",
-    "nesquiki tencerede saklamam..."
+    "nesquiki tencerede saklamam...",
+    "ilk öpüştüğümüz an",
+    "kokunu ilk içime çektiğim an"
+    
 ];
 
 let momentIndex = 0;
@@ -331,5 +334,6 @@ const barObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.algo-progress-fill').forEach(bar => {
     barObserver.observe(bar);
 });
+
 
 
