@@ -244,8 +244,10 @@ function startComplimentCarousel() {
 // Highlight Moments Carousel
 const moments = [
     "klavyeden tek tek küçük harfle yazman",
-    "\"evlenelim mi?\" şakaları...",
-    "trafikte mesajlaşma kaosu ",
+    "sana getirdiğim hariboyu bende unutman :)",
+    "açım dedikten sonra sana yemek ve pundik getirmem",
+    "ilk buluşmada çiçek vermem (elim ayağıma dolanmıştı)",
+    "aşırı yağmurlu bi günde sırılsıklam üşüyerek buluşmamız",
     "birbirimizi ana karakterler gibi görmemiz ✨",
     "diğerlerine boş diyişlerimiz",
     "Gece 3'teki derin konuşmalarımız 🌙",
@@ -355,5 +357,6 @@ const barObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.algo-progress-fill').forEach(bar => {
     barObserver.observe(bar);
 });
+
 
 
