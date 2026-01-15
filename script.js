@@ -84,6 +84,7 @@ function scrollToSection(index) {
         // Auto-play music if moving past intro
         if (currentSectionIndex > 0) {
             ensureMusicPlaying();
+            checkAndStartCarousels(); // Start text carousels when navigating
         }
     }
 }
@@ -164,9 +165,16 @@ startBtn.addEventListener('click', (e) => {
     scrollToSection(1);
 });
 
-// Random Photo Logic
+// Random Photo Logic - ensure different photo each time
 function setRandomPhoto(element) {
-    let randomPhoto = photos[Math.floor(Math.random() * photos.length)];
+    const currentPhoto = element.src;
+    let randomPhoto;
+
+    // Keep picking until we get a different photo
+    do {
+        randomPhoto = photos[Math.floor(Math.random() * photos.length)];
+    } while (photos.length > 1 && currentPhoto.includes(randomPhoto));
+
     element.src = randomPhoto;
 }
 
@@ -182,7 +190,7 @@ function startPhotoCycle(imgElement) {
         imgElement.style.opacity = 0;
 
         setTimeout(() => {
-            // Change photo
+            // Change photo (will be different due to setRandomPhoto logic)
             setRandomPhoto(imgElement);
             // Fade in (restore original opacity, usually 0.3 defined in CSS)
             imgElement.style.opacity = 0.3;
@@ -216,8 +224,12 @@ const compliments = [
 
 let compIndex = 0;
 const compText = document.getElementById('comp-text');
+let compIntervalStarted = false;
 
-if (compText) {
+function startComplimentCarousel() {
+    if (compIntervalStarted || !compText) return;
+    compIntervalStarted = true;
+
     setInterval(() => {
         compText.style.transition = "opacity 0.5s";
         compText.style.opacity = 0;
@@ -226,27 +238,28 @@ if (compText) {
             compText.innerText = `"${compliments[compIndex]}"`;
             compText.style.opacity = 1;
         }, 500);
-    }, 3000); // Faster cycle
+    }, 3000);
 }
 
 // Highlight Moments Carousel
 const moments = [
     "klavyeden tek tek küçük harfle yazman",
-    "getirdiğim hariboyu bende unutman :)",
-    "sana ilk buluşmada çiçek getirmem",
+    "\"evlenelim mi?\" şakaları...",
+    "trafikte mesajlaşma kaosu ",
     "birbirimizi ana karakterler gibi görmemiz ✨",
     "diğerlerine boş diyişlerimiz",
     "Gece 3'teki derin konuşmalarımız 🌙",
-    "nesquiki tencerede saklamam...",
-    "ilk öpüştüğümüz an",
-    "kokunu ilk içime çektiğim an"
-    
+    "nesquiki tencerede saklamam..."
 ];
 
 let momentIndex = 0;
 const momentText = document.getElementById('moment-text');
+let momentIntervalStarted = false;
 
-if (momentText) {
+function startMomentsCarousel() {
+    if (momentIntervalStarted || !momentText) return;
+    momentIntervalStarted = true;
+
     setInterval(() => {
         momentText.style.transition = "opacity 0.5s";
         momentText.style.opacity = 0;
@@ -256,6 +269,14 @@ if (momentText) {
             momentText.style.opacity = 1;
         }, 500);
     }, 4000);
+}
+
+// Start carousels when user navigates past intro
+function checkAndStartCarousels() {
+    if (currentSectionIndex > 0) {
+        startComplimentCarousel();
+        startMomentsCarousel();
+    }
 }
 
 // Heart Blast Effect
@@ -334,6 +355,5 @@ const barObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.algo-progress-fill').forEach(bar => {
     barObserver.observe(bar);
 });
-
 
 
